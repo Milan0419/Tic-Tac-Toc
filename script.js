@@ -1,4 +1,4 @@
-console.log("Welcome to Tic Tac Toe");
+console.log("Üdvözöllek az Amőbában");
 let music = new Audio("music.mp3");
 let audioTurn = new Audio("ting.mp3");
 let gameoverAudio = new Audio("gameover.mp3");
@@ -6,7 +6,7 @@ let turn = "X";
 let gameover = false;
 
 const changeTurn = () => {
-    return turn === "X" ? "0" : "X"
+    return turn === "X" ? "O" : "X"
 
 }
 const checkWin = () => {
@@ -27,7 +27,7 @@ const checkWin = () => {
             boxtext[e[1]].innerText === boxtext[e[2]].innerText &&
             boxtext[e[0]].innerText !== ''
         ) {
-            document.querySelector('.info').innerText = boxtext[e[0]].innerText + " Won";
+            document.querySelector('.info').innerText = boxtext[e[0]].innerText + " Nyert";
             gameover = true;
             document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "200px"
         }
@@ -47,7 +47,7 @@ Array.from(boxes).forEach(Element => {
             if (!gameover) {
 
 
-                document.getElementsByClassName("info")[0].innerText = "Turn for" + turn;
+                document.getElementsByClassName("info")[0].innerText = "Következik az " + turn;
             }
         }
     })
@@ -62,7 +62,7 @@ reset.addEventListener('click', ()=>{
      gameover = false
 
 
-                document.getElementsByClassName("info")[0].innerText = "Turn for" + turn;
+                document.getElementsByClassName("info")[0].innerText = "Következik az " + turn;
             document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "0px"
 
             
